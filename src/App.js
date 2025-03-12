@@ -1,13 +1,12 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+import HomePage from "../src/pages/HomePage.js"
 
-function HomePage() {
+function App() {
   return (
     <div>
-      <Navbar />
-      <h1>Ana Sayfa</h1>
+      <HomePage />
     </div>
   );
 }
 
-export default HomePage;
+export default App;
