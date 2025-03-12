@@ -9,37 +9,50 @@ function Navbar({ toggleSidebar }) {
 
   return (
     <nav className="navbar">
-      <button
-        className="menu-btn"
-        onClick={() => {
-          console.log("Sidebar toggle button clicked"); // Debugging log
-          if (toggleSidebar) {
-            toggleSidebar();
-          } else {
-            console.error(
-              "toggleSidebar function is undefined!"
-            );
-          }
-        }}
-      >
-        <i className="bi bi-list"></i>
-      </button>
+      <div className="navbar-left">
+        <button
+          className="menu-btn"
+          onClick={() => {
+            console.log("Sidebar toggle button clicked"); // Debugging log
+            if (toggleSidebar) {
+              toggleSidebar();
+            } else {
+              console.error(
+                "toggleSidebar function is undefined!"
+              );
+            }
+          }}
+        >
+          <i className="bi bi-list"></i>
+        </button>
 
-      {/* YouTube Logo */}
-      <div className="navbar-logo">
-        <i
-          className="bi bi-youtube"
-          style={{ color: "red", fontSize: "2rem" }}
-        ></i>
-        <span className="logo-text">YouTube Clone</span>
+        {/* YouTube Logo */}
+        <div className="navbar-logo">
+          <i
+            className="bi bi-youtube"
+            style={{ color: "red", fontSize: "3rem" }}
+          ></i>
+          <span
+            className="logo-text"
+            style={{ marginLeft: "1rem" }}
+          >
+            YouTube Clone
+          </span>
+        </div>
       </div>
 
       {/* Search Bar */}
-      <input
-        type="text"
-        className="navbar-search form-control"
-        placeholder="Search"
-      />
+      <div className="navbar-search-container">
+        <div className="navbar-search">
+          <input type="text" placeholder="Ara" />
+          <button className="search-button">
+            <i className="bi bi-search"></i>
+          </button>
+        </div>
+        <button className="voice-search-button">
+          <i className="bi bi-mic"></i>
+        </button>
+      </div>
 
       {/* Icons */}
       <div className="navbar-icons">
