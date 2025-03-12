@@ -1,26 +1,26 @@
 import React from "react";
 import "../styles/Navbar.css";
 
-function Navbar({ toggleSidebar }) {
+function Navbar({ toggleSidebar, isSidebarOpen }) {
   console.log(
     "Navbar received toggleSidebar prop:",
     typeof toggleSidebar
   ); // Debugging log
 
   return (
-    <nav className="navbar">
+    <nav
+      className={`navbar ${isSidebarOpen ? "expanded" : "collapsed"}`}
+    >
       <div className="navbar-left">
         <button
           className="menu-btn"
           onClick={() => {
             console.log("Sidebar toggle button clicked"); // Debugging log
-            if (toggleSidebar) {
-              toggleSidebar();
-            } else {
-              console.error(
-                "toggleSidebar function is undefined!"
-              );
-            }
+            toggleSidebar
+              ? toggleSidebar()
+              : console.error(
+                  "toggleSidebar function is undefined!"
+                );
           }}
         >
           <i className="bi bi-list"></i>
@@ -32,9 +32,10 @@ function Navbar({ toggleSidebar }) {
             className="bi bi-youtube"
             style={{ color: "red", fontSize: "3rem" }}
           ></i>
-          <span
-            className="logo-text"
-            style={{ marginLeft: "1rem" }}
+          <span className="logo-text"
+            style={{
+              marginLeft: isSidebarOpen ? "1rem" : "0.5rem",
+            }}
           >
             YouTube Clone
           </span>
