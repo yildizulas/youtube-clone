@@ -15,7 +15,7 @@
 }
 
 .main-container {
-  margin-top: 80px; /* Adjust content placement below navbar */
+  margin-top: 80px;
 }
 
 /* Sidebar Toggle Button */
@@ -43,6 +43,12 @@
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.youtube-icon {
+  color: red;
+  font-size: 2rem;
+  margin-right: 5px;
 }
 
 /* Search Bar Container */

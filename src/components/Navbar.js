@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Navbar.css";
 
 function Navbar({ toggleSidebar, isSidebarOpen }) {
+  const [searchInput, setSearchInput] = useState("");
   console.log(
     "Navbar received toggleSidebar prop:",
     typeof toggleSidebar
@@ -35,7 +36,7 @@ function Navbar({ toggleSidebar, isSidebarOpen }) {
 
         {/* YouTube Logo */}
         <div className="navbar-logo">
-          <i className="bi bi-youtube"></i>
+          <i className="bi bi-youtube youtube-icon"></i>
           <span className="logo-text">YouTube Clone</span>
         </div>
       </div>
@@ -43,8 +44,19 @@ function Navbar({ toggleSidebar, isSidebarOpen }) {
       {/* Search Bar */}
       <div className="navbar-search-container">
         <div className="navbar-search">
-          <input type="text" placeholder="Ara" />
-          <button className="search-button">
+          <input
+            type="text"
+            placeholder="Ara"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") setSearchInput("");
+            }}
+          />
+          <button
+            className="search-button"
+            onClick={() => setSearchInput("")}
+          >
             <i className="bi bi-search"></i>
           </button>
         </div>
