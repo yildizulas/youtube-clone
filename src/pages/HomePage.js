@@ -12,7 +12,7 @@ function HomePage() {
     setIsSidebarOpen((prev) => !prev);
   };
 
-  const videos = Array.from({ length: 10 }, (_, index) => ({
+  const videos = Array.from({ length: 50 }, (_, index) => ({
     id: index,
   }));
 
