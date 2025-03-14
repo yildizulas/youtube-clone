@@ -35,10 +35,30 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .sidebar ul li:hover {
+  background-color: #383838;
+}
+
+.sidebar-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 1px 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.sidebar-btn:hover {
   background-color: #383838;
 }

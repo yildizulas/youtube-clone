@@ -1,43 +1,63 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Sidebar.css";
 
 function Sidebar({ isOpen }) {
+  const navigate = useNavigate();
+
   return (
-    <div
-      className={`sidebar ${isOpen ? "open" : "closed"}`}
-    >
+    <div className={`sidebar ${isOpen ? "open" : "closed"}`}>
       <ul>
         <li>
-          <i className="bi bi-house-door"></i> Ana Sayfa
+          <button className="sidebar-btn" onClick={() => navigate("/")}>
+            <i className="bi bi-house-door"></i> Ana Sayfa
+          </button>
         </li>
         <li>
-          <i className="bi bi-collection-play"></i> Shorts
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-collection-play"></i> Shorts
+          </button>
         </li>
         <li>
-          <i className="bi bi-people"></i> Abonelikler
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-people"></i> Abonelikler
+          </button>
         </li>
         <li>
-          <i className="bi bi-music-note"></i> YouTube Music
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-music-note"></i> YouTube Music
+          </button>
         </li>
         <hr />
         <li>
-          <i className="bi bi-clock-history"></i> Geçmiş
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-clock-history"></i> Geçmiş
+          </button>
         </li>
         <li>
-          <i className="bi bi-folder"></i> Oynatma Listeleri
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-folder"></i> Oynatma Listeleri
+          </button>
         </li>
         <li>
-          <i className="bi bi-play-circle"></i> Videolarınız
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-play-circle"></i> Videolarınız
+          </button>
         </li>
         <li>
-          <i className="bi bi-clock"></i> Daha Sonra İzle
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-clock"></i> Daha Sonra İzle
+          </button>
         </li>
         <li>
-          <i className="bi bi-hand-thumbs-up"></i>{" "}
-          Beğendiğim Videolar
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-hand-thumbs-up"></i> Beğendiğim Videolar
+          </button>
         </li>
         <li>
-          <i className="bi bi-scissors"></i> Klipleriniz
+          <button className="sidebar-btn" onClick={() => navigate("/empty")}>
+            <i className="bi bi-scissors"></i> Klipleriniz
+          </button>
         </li>
       </ul>
     </div>

@@ -1,25 +1,13 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
-import VideoCard from "../components/VideoCard";
 import "../styles/global.css";
+import "../styles/EmptyPage.css";
 
 function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(
     localStorage.getItem("isSidebarOpen") === "true"
   );
-
-  // Initialize videosRef only once without a conditional useRef call
-  const videosRef = useRef(null);
-
-  if (!videosRef.current) {
-    videosRef.current = Array.from(
-      { length: 50 },
-      (_, index) => ({
-        id: index,
-      })
-    );
-  }
 
   // Toggle sidebar state without causing a full re-render
   const toggleSidebar = () => {
@@ -34,19 +22,18 @@ function HomePage() {
       className={`home-page ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}
     >
       <Navbar toggleSidebar={toggleSidebar} />
-
       <div className="main-container">
         <Sidebar isOpen={isSidebarOpen} />
         <div
-          className="content"
+          className="content-empty-page"
           style={{
             marginLeft: isSidebarOpen ? "300px" : "70px",
           }}
         >
           <div className="video-grid">
-            {videosRef.current.map((video) => (
-              <VideoCard key={video.id} />
-            ))}
+            Oops! Bu sayfayı nasıl buldunuz? Burası halen
+            yapım aşamasında, burayı görmemeniz gerekiyordu!
+            🤫
           </div>
         </div>
       </div>
