@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import VideoCard from "../components/VideoCard";
 import "../styles/global.css";
 
 function HomePage() {
@@ -11,6 +12,10 @@ function HomePage() {
     setIsSidebarOpen((prev) => !prev);
   };
 
+  const videos = Array.from({ length: 10 }, (_, index) => ({
+    id: index,
+  }));
+
   return (
     <div
       className={`home-page ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}
@@ -20,12 +25,16 @@ function HomePage() {
       <div className="main-container">
         <Sidebar isOpen={isSidebarOpen} />
         <div
-          className={`content ${isSidebarOpen ? "expanded" : "collapsed"}`}
+          className="content"
           style={{
             marginLeft: isSidebarOpen ? "300px" : "70px",
           }}
         >
-          <h1>Ana Sayfa</h1>
+          <div className="video-grid">
+            {videos.map((video) => (
+              <VideoCard key={video.id} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

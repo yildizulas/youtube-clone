@@ -10,6 +10,13 @@ function Navbar({ toggleSidebar, isSidebarOpen }) {
   return (
     <nav
       className={`navbar ${isSidebarOpen ? "expanded" : "collapsed"}`}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+      }}
     >
       <div className="navbar-left">
         <button
@@ -28,17 +35,8 @@ function Navbar({ toggleSidebar, isSidebarOpen }) {
 
         {/* YouTube Logo */}
         <div className="navbar-logo">
-          <i
-            className="bi bi-youtube"
-            style={{ color: "red", fontSize: "3rem" }}
-          ></i>
-          <span className="logo-text"
-            style={{
-              marginLeft: isSidebarOpen ? "1rem" : "0.5rem",
-            }}
-          >
-            YouTube Clone
-          </span>
+          <i className="bi bi-youtube"></i>
+          <span className="logo-text">YouTube Clone</span>
         </div>
       </div>
 
