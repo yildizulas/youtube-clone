@@ -35,7 +35,7 @@ This project is a YouTube Clone built using **React, Bootstrap, and React Router
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/youtube-clone.git
+   git clone https://github.com/yildizulas/youtube-clone.git
    cd youtube-clone
    ```
 2. Install dependencies:
